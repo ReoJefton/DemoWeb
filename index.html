@@ -9,15 +9,17 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <h1 class="header" id="header"></h1>
     <button
       type="button"
-      onclick="document.getElementById('demo').innerHTML = Date()"
+      onclick="document.getElementById('currentDate').innerHTML = Date()"
     >
       Click me to display Date and Time.
     </button>
 
-    <p id="demo"></p>
+    <p id="currentDate"></p>
 
+    <div class="data-container" id="dataContainer"></div>
     <div>
       <form action="/action_page.php">
         <label for="fname">First Name</label>
