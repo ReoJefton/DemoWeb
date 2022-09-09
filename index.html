@@ -6,47 +6,392 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js" defer></script>
   </head>
-  <body>
-    <h1 class="header" id="header"></h1>
-    <button
-      type="button"
-      onclick="document.getElementById('currentDate').innerHTML = Date()"
-    >
-      Click me to display Date and Time.
-    </button>
+  <>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a
+                href="#section1"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Hooray!"
+                >Home</a
+              >
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                >Page 1 <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Hooray!"
+                    >Page 1-1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Hooray!"
+                    >Page 1-2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Hooray!"
+                    >Page 1-3</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#section2"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Hooray!"
+                >Page 2</a
+              >
+            </li>
+          </ul>
+          <button class="btn btn-danger navbar-btn navbar-left">Button</button>
+          <form class="navbar-form navbar-left" action="/action_page.php">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" />
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a
+                href="#"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Hooray!"
+                ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Hooray!"
+                ><span class="glyphicon glyphicon-log-in"></span> Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="section1">
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Private</a></li>
+        <li><a href="#">Pictures</a></li>
+        <li class="active">Vacation</li>
+      </ul>
+      <div class="page-header">
+        <h1 class="header text-primary" id="header"></h1>
+        <p id="currentDate"></p>
 
-    <p id="currentDate"></p>
-
-    <div class="data-container" id="dataContainer"></div>
-    <div>
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input
-          type="text"
-          id="fname"
-          name="firstname"
-          placeholder="Your name.."
-        />
-
-        <label for="lname">Last Name</label>
-        <input
-          type="text"
-          id="lname"
-          name="lastname"
-          placeholder="Your last name.."
-        />
-
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-
-        <input type="submit" value="Submit" />
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="document.getElementById('currentDate').innerHTML = Date()"
+        >
+          Click me to display Date and Time.
+        </button>
+      </div>
+      <div class="row data-container" id="dataContainer"></div>
+    </div>
+    <div class="container">
+      <div class="list-group">
+        <a href="#" class="list-group-item">First item</a>
+        <a href="#" class="list-group-item">Second item</a>
+        <a href="#" class="list-group-item">Third item</a>
+      </div>
+      <form class="well" action="/action_page.php">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            placeholder="Your name.."
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            class="form-control"
+            placeholder="Your last name.."
+          />
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" class="form-control">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
+    <div class="container">
+      <div class="well" id="section2">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe
+            class="embed-responsive-item"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          ></iframe>
+        </div>
+      </div>
+      <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+      </ul>
+      <ul class="pager">
+        <li class="previous"><a href="#">Previous</a></li>
+        <li class="next"><a href="#">Next</a></li>
+      </ul>
+      <div class="jumbotron text-center">
+        <h1>Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+      </div>
+      <blockquote>
+        <p>
+          For 50 years, WWF has been protecting the future of nature. The
+          world's leading conservation organization, WWF works in 100 countries
+          and is supported by 1.2 million members in the United States and close
+          to 5 million globally.
+        </p>
+        <footer>From WWF's website</footer>
+      </blockquote>
+   
+      <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Apple</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Samsung</button>
+        </div>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            data-toggle="dropdown"
+          >
+            Sony <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Tablet</a></li>
+            <li><a href="#">Smartphone</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+    </div>
+     
+      
+      <div class="container">
+        <!-- Left-aligned media object -->
+      <div class="media">
+        <div class="media-left">
+          <img src="img_avatar1.png" class="media-object" style="width: 60px" />
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Left-aligned</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+      <hr />
+    
+        <!-- Trigger the modal with a button -->
+      <button
+      type="button"
+      class="btn btn-info btn-lg"
+      data-toggle="modal"
+      data-target="#myModal"
+    >
+      Open Modal
+    </button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-default"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      
+      <div class="container">
+        <h2>Filterable Table</h2>
+        <p>
+          Type something in the input field to search the table for first names,
+          last names or emails:
+        </p>
+        <input
+          class="form-control"
+          id="myInput"
+          type="text"
+          placeholder="Search.."
+        />
+        <br />
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+              <td>mary@mail.com</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>Dooley</td>
+              <td>july@greatstuff.com</td>
+            </tr>
+            <tr>
+              <td>Anja</td>
+              <td>Ravendale</td>
+              <td>a_r@test.com</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Note that we start the search in tbody, to prevent filtering the table
+          headers.
+        </p>
+      </div>
+
+    <div class="container">
+      <h2>Carousel Example</h2>  
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+    
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+          </div>
+    
+          <div class="item">
+            <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+          </div>
+        
+          <div class="item">
+            <img src="ny.jpg" alt="New york" style="width:100%;">
+          </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <footer class="container-fluid text-center">
+      <p>Online Store Copyright</p>
+      <form class="form-inline">
+        Get deals:
+        <input
+          type="email"
+          class="form-control"
+          size="50"
+          placeholder="Email Address"
+        />
+        <button type="button" class="btn btn-danger">Sign Up</button>
+      </form>
+    </footer>
   </body>
 </html>
